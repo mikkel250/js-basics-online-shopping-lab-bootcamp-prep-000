@@ -1,6 +1,5 @@
 var cart = [];
-var cartItemName = Object.keys(cart);  // this creates an array with all of the keys (as strings)
-var cartItemPrice = cart[cartItemName]; // this gets the values from the keys
+
 
 function getCart() {
  return cart;
@@ -23,15 +22,17 @@ function addToCart(item) {
 
 function viewCart() {
   // write your code here
+  var cartItemName = Object.keys(cart);  // this creates an array with all of the keys (as strings)
+var cartItemPrice = cart[cartItemName]; // this gets the values from the keys
   var i = 0;
   if (cart.length === 0) {
     console.log("Your shopping cart is empty.");
   }
   else if (cart.length === 1) {
     // code for 1 item
-    for (i = 0; i < cart.length; i++) {
-      console.log(`In your cart, you have ${cartItemName[i]} at $${cartItemPrice[i]}.`);
-      }
+    // for (i = 0; i < cart.length; i++) {
+      console.log(`In your cart, you have ` + cartItemName[0] + ` at $` + cartItemPrice[0] + `.`);
+      
     }
     else if (cart.length === 2) {
       // code for 2 items
