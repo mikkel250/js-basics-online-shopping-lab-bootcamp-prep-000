@@ -19,6 +19,8 @@ function addToCart(item) {
  return cart;
 }
 
+// Problems so far:
+// 1 item cart is showing 0 for item and undefined for Price. Need to figure out how to pull the keys and the values from cart array
 
 function viewCart() {
   // write your code here
