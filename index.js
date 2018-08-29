@@ -15,7 +15,7 @@ function addToCart(item) {
  var itemHash = { itemName: item, itemPrice: randomPrice };
  cart.push(itemHash);
  console.log(`${cart[cart.length -1].itemName} has been added to your cart.`);
- cart;
+ viewCart();
 }
 
 
@@ -56,7 +56,7 @@ function total() {
       return totalCart;
 }
 
-
+// this one may need some work - it's returning the else statement
 function removeFromCart(item) {
   // write your code here
   var present = false;  // flag to set if item is present
@@ -64,23 +64,24 @@ function removeFromCart(item) {
     if (item === cart[i].itemName) {
       present = true; 
       cart.splice(i, 1);
-      getCart();
+      viewCart();
       present = false;
     }
     else if  (present === false) {
       console.log("That item is not in your cart.");
-      getCart();
+      viewCart();
     }    
   }
 }
 
+// the if is running even when the cardnumber is undefined
 function placeOrder(cardNumber) {
   // write your code here
-  if (typeof(cardNumber) !== undefined) {
-    console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`);
-    cart = [];
+  if (typeof cardNumber === 'undefined' || cardNumber === null) {
+    console.log("Sorry, we don't have a credit card on file for you.");
   }
   else {
-    console.log("Sorry, we don't have a credit card on file for you.");
+    console.log(`Your total cost is $${total()}, which will be charged to the card ${cardNumber}.`);
+    cart = [];
   }
 }
