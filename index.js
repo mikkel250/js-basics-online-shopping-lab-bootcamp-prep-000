@@ -91,7 +91,7 @@ function removeFromCart(item) {
   }
 }
 
-// the if is running even when the cardnumber is undefined
+
 function placeOrder(cardNumber) {
   // write your code here
   if (typeof cardNumber === 'undefined' || cardNumber === null) {
