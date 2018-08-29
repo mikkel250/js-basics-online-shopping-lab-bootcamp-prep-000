@@ -12,10 +12,9 @@ function setCart(c) {
 
 function addToCart(item) {
  var randomPrice = Math.floor((Math.random() * 100) + 1);
- var itemHash = {itemName: item, itemPrice: randomPrice };
+ var itemHash = { itemName: item, itemPrice: randomPrice };
  cart.push(itemHash);
  console.log(`${cart[cart.length -1].itemName} has been added to your cart.`);
- //return cart;
 }
 
 
@@ -33,17 +32,17 @@ function viewCart() {
       // code for 2 items
       var medCart = [`In your cart, you have `];
       for (i = 0; i < cart.length - 1; i++) {   
-      medCart.push(`${cart[i].itemName} at $${cart[i].itemPrice}`);     
+      medCart.push(`${cart[i].itemName} at $${cart[i].itemPrice} `);     
        }
-       console.log(`${medCart.join("")} and ${cart[cart.length -1].itemName} at $${cart[cart.length -1].itemPrice}.`);
+       console.log(`${medCart.join("")}and ${cart[cart.length -1].itemName} at $${cart[cart.length -1].itemPrice}.`);
      }
     else {
       // code for 3+ items
       var bigCart = [`In your cart, you have `];
       for (i = 0; i < cart.length - 1; i++) {   
-      bigCart.push(`${cart[i].itemName} at $${cart[i].itemPrice},`);
+      bigCart.push(`${cart[i].itemName} at $${cart[i].itemPrice}, `);
       }
-       console.log(`${bigCart.join("")} and ${cart[cart.length -1].itemName} at $${cart[cart.length -1].itemPrice}.`);
+       console.log(`${bigCart.join("")}and ${cart[cart.length -1].itemName} at $${cart[cart.length -1].itemPrice}.`);
     }
 }
 
